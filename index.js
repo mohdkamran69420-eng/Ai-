@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 
-const API_KEY = "YOUR_API_KEY"; // don't commit real key
+const API_KEY = process.env.API_KEY;
 
 async function askAI(question) {
   const response = await fetch(
@@ -25,4 +25,4 @@ async function askAI(question) {
   console.log(data.choices[0].message.content);
 }
 
-askAI("Explain Newton's first law simply");
+askAI("Hello");
